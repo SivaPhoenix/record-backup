@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import clg from '../assets/loginClg.png';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 // import lottie from 'lottie-web';
@@ -38,12 +38,12 @@ const Signin = () => {
           <>
             {/* Login Section */}
             <div className="w-1/2 bg-[#2B66F6] flex flex-col items-center justify-center p-12 rounded-lg">
-              <img src={logo} className="mb-4 h-[3rem] w-28" />
+              <img src={logo} className="mb-2 h-[3rem] w-28" />
               {/* <img src="https://iconscout.com/lottie-animation/profile-login-6760440" className="mb-4 h-[3rem] w-28" /> */}
               <img src={anim} alt="Welcome" className="mb-4 h-96 w-max" />
               {/* <h2 className="text-white text-3xl">Welcome to the page</h2> */}
             </div>
-            <div className="w-1/2 p-5 flex flex-col justify-center">
+            <div className="w-1/2 p-4 flex flex-col justify-center">
               <div className="flex flex-col items-center justify-center mb-4">
                 <img src={clg} alt="Welcome" className="mb-4 h-20 w-20"/>
               </div>
@@ -51,36 +51,14 @@ const Signin = () => {
               <h3 className="text-sm font-sans mb-4 text-center">Let's know your student’s performance.</h3>
               <form className='p-3'>
                 {/* Form Inputs */}
-                <div className="relative z-0 w-full mb-5 group">
-                  <input
-                    type="email"
-                    id="email"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-400 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    htmlFor="email"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Email address
-                  </label>
+                <div className="mb-6">
+                    {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Email Address" required />
                 </div>
-                <div className="relative z-0 w-full mb-5 group">
-                  <input
-                    type="password"
-                    id="password"
-                    className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-400 peer"
-                    placeholder=" "
-                    required
-                  />
-                  <label
-                    htmlFor="password"
-                    className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    Password
-                  </label>
-                </div>
+                <div className="mb-6">
+                    {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
+                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Password" required />
+                </div> 
                 <button
                   type="submit"
                   className="w-full bg-[#2B66F6] text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
@@ -151,21 +129,10 @@ const Signin = () => {
                   in the email you registered to Record.</h3>
                   <form className="w-1/2" onSubmit={handleSendClick}>
                     {/* Email Input */}
-                    <div className="relative z-0 w-full mb-9 group">
-                      <input
-                        type="email"
-                        id="forgot-email"
-                        className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-400 peer"
-                        placeholder=" "
-                        required
-                      />
-                      <label
-                        htmlFor="forgot-email"
-                        className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                      >
-                        Email address
-                      </label>
-                    </div>
+                    <div className="mb-6">
+                    {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Email Address" required />
+                </div>
                     <button
                       type="submit"
                       className="w-full bg-[#2B66F6] text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
