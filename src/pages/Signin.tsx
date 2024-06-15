@@ -1,9 +1,9 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import clg from '../assets/loginClg.png';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 // import lottie from 'lottie-web';
-import anim from '../assets/about.png';
+import welcome from '../assets/welcome.svg';
 import logo from '../assets/brand-logo.svg';
 
 const Signin = () => {
@@ -29,35 +29,39 @@ const Signin = () => {
       {/* Pseudo-element for background split */}
       <div className="absolute inset-0 flex">
         <div className="w-1/2 bg-white"></div>
-        {/* <div className="w-1/2 bg-orange-500"></div> */}
+      
         <div className="w-1/2" style={{ background: 'linear-gradient(to bottom, #EB7C49, #F04F52)' }}></div>
       </div>
       {/* Main content */}
-      <div className={`relative flex w-3/4 max-w-4xl bg-white rounded-lg p-7 shadow-lg overflow-hidden ${showForgotPassword ? 'flex-col' : 'flex-row'}`}>
+      <div className={`relative flex w-3/4 max-w-4xl p-5 bg-white rounded-lg  shadow-lg overflow-hidden ${showForgotPassword ? 'flex-col' : 'flex-row'}`}>
         {!showForgotPassword ? (
           <>
             {/* Login Section */}
-            <div className="w-1/2 bg-[#2B66F6] flex flex-col items-center justify-center p-12 rounded-lg">
-              <img src={logo} className="mb-2 h-[3rem] w-28" />
-              {/* <img src="https://iconscout.com/lottie-animation/profile-login-6760440" className="mb-4 h-[3rem] w-28" /> */}
-              <img src={anim} alt="Welcome" className="mb-4 h-96 w-max" />
-              {/* <h2 className="text-white text-3xl">Welcome to the page</h2> */}
-            </div>
-            <div className="w-1/2 p-4 flex flex-col justify-center">
-              <div className="flex flex-col items-center justify-center mb-4">
-                <img src={clg} alt="Welcome" className="mb-4 h-20 w-20"/>
+            
+            <div className="w-[45%] bg-[#2B66F6] flex flex-col gap-4 p-12 rounded-lg">
+              <img src={logo} alt="record" className="mb-2 w-28"/>
+              <div className='font-sans font-semibold text-3xl text-white'>Welcome</div>
+              <div className='font-sans font-semibold text-sm text-white'>Sign in and see your students performance and manage your institution.</div>
+              <div className='flex justify-center items-center'>
+              <img src={welcome} alt="Welcome" className="mb-4 w-max" />
               </div>
-              <h2 className="text-3xl font-sans mb-4 text-center">Sign In.</h2>
-              <h3 className="text-sm font-sans mb-4 text-center">Let's know your student’s performance.</h3>
+            </div>
+            
+            <div className="ml-9 w-1/2 p-5 flex flex-col justify-center">
+              <div className="flex flex-col items-center justify-center mb-1">
+                <img src={clg} alt="college" className="w-14"/>
+              </div>
+              <h2 className="text-3xl font-sans mb-3 text-center">Sign In.</h2>
+              <h3 className="text-sm font-sans mb-3 text-center">Let's know your student’s performance.</h3>
               <form className='p-3'>
                 {/* Form Inputs */}
-                <div className="mb-6">
+                <div className="mb-5">
                     {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
-                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Enter Email Address" required />
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 " placeholder="Enter Email Address" required />
                 </div>
-                <div className="mb-6">
+                <div className="mb-5">
                     {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
-                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Password" required />
+                    <input type="password" id="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 " placeholder="Password" required />
                 </div> 
                 <button
                   type="submit"
@@ -83,9 +87,10 @@ const Signin = () => {
                     </button>
                   </div>
                 </div>
+                <div className=' flex text-sm justify-center items-center mt-2'>Don’t have an account? <span className='font-semibold text-black'> Contact Administrator.</span></div>
               </form>
               {/* Copyright */}
-              <div className='flex mt-16 text-sm text-gray-400'>
+              <div className='flex mt-12 text-sm text-gray-400'>
                 <div className="w-full flex justify-start">
                   Privacy Policy
                 </div>
@@ -102,13 +107,13 @@ const Signin = () => {
               <button
                 type="button"
                 onClick={handleBackToLoginClick}
-                className=" bg-gray-300 p-2 border rounded focus:ring-4 focus:ring-gray-300 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800"
+                className=" p-2"
               >
                 <div className='flex justify-center items-center'><MdOutlineKeyboardArrowLeft/><p className='text-sm font-sans' >Go Back</p></div> 
               </button>
             </div>
             <div className="flex flex-col items-center justify-center p-10">
-              <img src="https://qudo-creations.s3.ap-south-1.amazonaws.com/other-brand-assets/record.png" className="mb-4 h-[3rem] w-28" />
+              <img src="https://qudo-creations.s3.ap-south-1.amazonaws.com/other-brand-assets/record.png" className="mb-4 h-10 w-28" />
               {/* Email Sent Confirmation */}
               {emailSent ? (
                 <div className='w-1/2'>
@@ -129,9 +134,9 @@ const Signin = () => {
                   in the email you registered to Record.</h3>
                   <form className="w-1/2" onSubmit={handleSendClick}>
                     {/* Email Input */}
-                    <div className="mb-6">
+                    <div className="mb-4">
                     {/* <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label> */}
-                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Enter Email Address" required />
+                    <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2" placeholder="Enter Email Address" required />
                 </div>
                     <button
                       type="submit"
