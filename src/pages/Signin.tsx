@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import clg from '../assets/loginClg.png';
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
-// import lottie from 'lottie-web';
 import welcome from '../assets/welcome.svg';
 import logo from '../assets/brand-logo.svg';
 
